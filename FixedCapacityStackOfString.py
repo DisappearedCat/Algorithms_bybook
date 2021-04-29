@@ -3,7 +3,7 @@ class FixedCapacityStackOfString:
     __size = 0
 
     def __init__(self, cap):
-        items = [None] * 10
+        self.__items = [None] * 10
 
     def is_empty(self):
         return self.__size == 0
