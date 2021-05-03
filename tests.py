@@ -2,6 +2,7 @@ import unittest
 import FixedCapacityStackOfString
 import MyStack
 
+
 class TestFixedCapacityStackOfString(unittest.TestCase):
     def test(self):
         stack = FixedCapacityStackOfString.FixedCapacityStackOfString(10)
