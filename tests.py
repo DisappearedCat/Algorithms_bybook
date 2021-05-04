@@ -1,7 +1,7 @@
 import unittest
 import FixedCapacityStackOfString
 import MyStack
-
+import MyStackQueue
 
 class TestFixedCapacityStackOfString(unittest.TestCase):
     def test(self):
@@ -42,6 +42,31 @@ class TestMyStack(unittest.TestCase):
         ch = stack.peek()
         self.assertEqual(ch, "A")
         self.assertEqual(stack.size(), 10)
+
+
+class TestMyStackQueue(unittest.TestCase):
+    def test(self):
+        sq = MyStackQueue.MyStackQueue(1)
+
+        sq.push(2)
+        sq.push(3)
+
+        pop = sq.pop()
+        pop2 = sq.pop()
+        self.assertEqual(pop, 1)
+        self.assertEqual(pop2, 2)
+
+        sq = MyStackQueue.MyStackQueue(1)
+        sq.push(2)
+        sq.push(3)
+        sq.insert(2.5, 2)
+        sq.insert(4, sq.size)
+        sq.insert(0, 0)
+
+        test_list = [0, 1, 2, 2.5, 3, 4]
+        for i in test_list:
+            pop = sq.pop()
+            self.assertEqual(pop, i)
 
 
 if __name__ == '__main__':
