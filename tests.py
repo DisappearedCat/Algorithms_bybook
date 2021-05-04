@@ -3,6 +3,7 @@ import FixedCapacityStackOfString
 import MyStack
 import MyStackQueue
 
+
 class TestFixedCapacityStackOfString(unittest.TestCase):
     def test(self):
         stack = FixedCapacityStackOfString.FixedCapacityStackOfString(10)
