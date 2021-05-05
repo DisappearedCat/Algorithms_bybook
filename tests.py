@@ -2,6 +2,7 @@ import unittest
 import FixedCapacityStackOfString
 import MyStack
 import MyStackQueue
+import MyDeque
 
 
 class TestFixedCapacityStackOfString(unittest.TestCase):
@@ -68,6 +69,20 @@ class TestMyStackQueue(unittest.TestCase):
         for i in test_list:
             pop = sq.pop()
             self.assertEqual(pop, i)
+
+
+class TestMyDeque(unittest.TestCase):
+    def test(self):
+        deque = MyDeque.MyDeque()
+        self.assertTrue(deque.is_empty())
+        self.assertEqual(deque.size(), 0)
+
+        deque.push_left("A")
+        deque.push_right("B")
+        deque.push_left("C")
+        deque.push_right("D")
+        self.assertEqual(deque.pop_left(), "C")
+        self.assertEqual(deque.pop_right(), "D")
 
 
 if __name__ == '__main__':
